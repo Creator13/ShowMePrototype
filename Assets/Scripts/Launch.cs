@@ -8,7 +8,7 @@ public class Launch : MonoBehaviour
     public GameObject sattelitePrefab;
     public float speed;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

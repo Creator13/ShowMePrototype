@@ -6,7 +6,6 @@ public class Launch : MonoBehaviour {
 
 	public GameObject target;
 	public GameObject sattelitePrefab;
-	public float speed;
 
 	private void Awake() {
 		cam = GetComponent<Camera>();
@@ -20,6 +19,8 @@ public class Launch : MonoBehaviour {
 
 				Vector3 vector = target.transform.position - transform.position;
 				vector.Normalize();
+
+				float speed = Settings.Instance.Setup.TravelTimeScale;
 				sattelite.GetComponent<Rigidbody>().AddForce(vector * speed);
 			}
 		}

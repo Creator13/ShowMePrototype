@@ -1,41 +1,60 @@
-﻿using UnityEngine;
+﻿using System;
+using UI;
+using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
 public class Launch : MonoBehaviour {
-	private Camera cam;
+    public event Action SatelliteLaunched;
+    
+    private Camera cam;
+    private Planet target;
 
-	public GameObject target;
-	public GameObject sattelitePrefab;
+    private Planet Target {
+        get => target;
+        set {
+            if (value != target) {
+                UIEvents.Instance.targetUpdated?.Invoke(value);
+            }
 
-	private void Awake() {
-		cam = GetComponent<Camera>();
-	}
+            target = value;
+        }
+    }
 
-	private void Update() {
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			if (UpdateTarget()) {
-				GameObject sattelite = Instantiate(sattelitePrefab, transform.position, Quaternion.identity);
-				sattelite.transform.LookAt(target.transform.position);
+    public GameObject sattelitePrefab;
 
-				Vector3 vector = target.transform.position - transform.position;
-				vector.Normalize();
+    private void Awake() {
+        cam = GetComponent<Camera>();
+    }
 
-				float speed = Settings.Instance.Setup.TravelTimeScale;
-				sattelite.GetComponent<Rigidbody>().AddForce(vector * speed);
-			}
-		}
-	}
+    private void Update() {
+        UpdateTarget();
 
-	private bool UpdateTarget() {
-		if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit)) {
-			if (hit.transform) {
-				target = hit.transform.gameObject;
-				return true;
-			}
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (Target) {
+                GameObject sattelite = Instantiate(sattelitePrefab, transform.position, Quaternion.identity);
+                sattelite.transform.LookAt(Target.transform.position);
 
-			target = null;
-		}
+                Vector3 vector = Target.transform.position - transform.position;
+                vector.Normalize();
 
-		return false;
-	}
+                float speed = Settings.Instance.Setup.TravelTimeScale;
+                sattelite.GetComponent<Rigidbody>().AddForce(vector * speed);
+                
+                SatelliteLaunched?.Invoke();
+            }
+        }
+    }
+
+    private void UpdateTarget() {
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit)) {
+            Planet planet = hit.transform.gameObject.GetComponent<Planet>();
+            if (hit.transform && planet) {
+                Target = planet;
+                Debug.Log(planet.Name);
+                return;
+            }
+        }
+
+        Target = null;
+    }
 }

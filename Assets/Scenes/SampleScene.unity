@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 395787038}
   - component: {fileID: 395787037}
   - component: {fileID: 395787036}
+  - component: {fileID: 395787040}
   m_Layer: 0
   m_Name: Sphere (1)
   m_TagString: Untagged
@@ -212,6 +213,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &395787040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395787035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664e8d9a3e6e46c0810d14250eb07207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Neptune
 --- !u!1001 &638825570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -422,6 +436,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &719603203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1567516879553172504, guid: 0662dc7715a34d84b96ba1aaf2101da4,
+    type: 3}
+  m_PrefabInstance: {fileID: 638825570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &719603207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719603203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4c0c6888de4211939239e19620519b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &766961958
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,6 +466,7 @@ GameObject:
   - component: {fileID: 766961961}
   - component: {fileID: 766961960}
   - component: {fileID: 766961959}
+  - component: {fileID: 766961963}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -514,6 +547,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &766961963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766961958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664e8d9a3e6e46c0810d14250eb07207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Earth
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +662,7 @@ MonoBehaviour:
   speedY: 2
   invertX: 1
   speedX: 1.5
-  lockCursor: 1
+  lockCursor: 0
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,7 +675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0c1ec5feb2854510826db28ad495c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 766961958}
   sattelitePrefab: {fileID: 7763869109609519079, guid: 99660f829659144ae8bb45af55249711,
     type: 3}
 --- !u!114 &963194231
@@ -644,9 +689,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c8b5b792ec3484c9a856dc54a492a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wideFocalLength: 20
-  teleFocalLength: 200
-  zoomLevels: 5
+  wideFOV: 60
+  teleFOV: 5
+  zoomLevels: 6
 --- !u!1 &1123238791
 GameObject:
   m_ObjectHideFlags: 0

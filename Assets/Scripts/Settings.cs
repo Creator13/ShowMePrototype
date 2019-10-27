@@ -1,17 +1,16 @@
 using UnityEngine;
 
 public interface ISettings {
-	SystemSetup Setup { get; }
+    SystemSetup Setup { get; }
 }
 
 public class Settings : MonoBehaviour, ISettings {
+    [SerializeField] private SystemSetup setup;
+    public SystemSetup Setup => setup;
 
-	[SerializeField] private SystemSetup setup;
-	public SystemSetup Setup => setup;
+    public static ISettings Instance;
 
-	public static ISettings Instance;
-	
-	private void Awake() {
-		Instance = this;
-	}
+    private void Awake() {
+        Instance = this;
+    }
 }

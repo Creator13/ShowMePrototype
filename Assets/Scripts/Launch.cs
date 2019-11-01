@@ -31,10 +31,11 @@ public class Launch : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (Target) {
-                GameObject sattelite = Instantiate(sattelitePrefab, transform.position, Quaternion.identity);
+                Vector3 launchPos = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
+                GameObject sattelite = Instantiate(sattelitePrefab, launchPos, Quaternion.identity);
                 sattelite.transform.LookAt(Target.transform.position);
 
-                Vector3 vector = Target.transform.position - transform.position;
+                Vector3 vector = Target.transform.position - launchPos;
                 vector.Normalize();
 
                 float speed = Settings.Instance.Setup.TravelTimeScale;

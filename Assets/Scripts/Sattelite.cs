@@ -20,8 +20,14 @@ public class Sattelite : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        orbit = true;
-        planet = collision.transform;
-        transform.position = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
+        if (collision.gameObject.CompareTag("Planet"))
+        {
+            orbit = true;
+            planet = collision.transform;
+            transform.position = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
+
+            Planet target = collision.gameObject.GetComponent<Planet>();
+            target.hasSattelite = true;
+        }
     }
 }

@@ -240,6 +240,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Venus
+  info1: {fileID: 0}
+  info2: {fileID: 0}
+  hasSattelite: 0
 --- !u!135 &158216525
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -346,6 +349,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Uranus
+  info1: {fileID: 0}
+  info2: {fileID: 0}
+  hasSattelite: 0
 --- !u!135 &364028632
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -557,6 +563,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Jupyter
+  info1: {fileID: 0}
+  info2: {fileID: 0}
+  hasSattelite: 0
 --- !u!4 &511158574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400054, guid: b9c9e722ab8e9854e8d3548b19f344b8,
@@ -771,7 +780,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0.16015625, y: 0.0703125, z: 0.06640625, w: -0.0703125}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -979,6 +988,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Earth
+  info1: {fileID: 21300000, guid: 1ff7eb60f24bc419cad677cbf9de52b8, type: 3}
+  info2: {fileID: 21300000, guid: 2b0889bc8066849dc822efd5e5916d3e, type: 3}
+  hasSattelite: 0
 --- !u!4 &834672749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4bac097f81176534996088a37b3d4d1e,
@@ -1079,6 +1091,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Saturn
+  info1: {fileID: 0}
+  info2: {fileID: 0}
+  hasSattelite: 0
 --- !u!135 &881285667
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1395,6 +1410,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Mars
+  info1: {fileID: 21300000, guid: 35f877b04479f4ac9bdbb11aaff0c9a7, type: 3}
+  info2: {fileID: 21300000, guid: 0784d4dc71db34a10b1dbd6149ff5317, type: 3}
+  hasSattelite: 0
 --- !u!135 &1047278996
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1543,7 +1561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1143747881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1558,11 +1576,11 @@ RectTransform:
   m_Father: {fileID: 892319169}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 749, y: -631}
-  m_SizeDelta: {x: 357.3, y: 92.1}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 357.3, y: 92.099976}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1143747882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,6 +1711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9965465d0e4b769d30235b50eb9fa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1001 &1159997976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1852,6 +1871,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Mercury
+  info1: {fileID: 0}
+  info2: {fileID: 0}
+  hasSattelite: 0
 --- !u!135 &1426687438
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2047,6 +2069,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Neptune
+  info1: {fileID: 21300000, guid: a70469c9437064f9ba103161951f73d0, type: 3}
+  info2: {fileID: 21300000, guid: 739a04592c6e147709a461ec22e153b0, type: 3}
+  hasSattelite: 0
 --- !u!135 &1509885416
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2165,7 +2190,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622086245}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2176,7 +2201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ff7eb60f24bc419cad677cbf9de52b8, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2206,7 +2231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6d78ff44596849edba2a53551473809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 1622086247}
 --- !u!1 &1686558488
 GameObject:
   m_ObjectHideFlags: 0

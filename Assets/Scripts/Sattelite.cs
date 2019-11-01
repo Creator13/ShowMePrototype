@@ -25,6 +25,9 @@ public class Sattelite : MonoBehaviour
             orbit = true;
             planet = collision.transform;
             transform.position = new Vector3(transform.position.x - 2, transform.position.y, transform.position.z);
+
+            Planet target = collision.gameObject.GetComponent<Planet>();
+            target.hasSattelite = true;
         }
     }
 }
